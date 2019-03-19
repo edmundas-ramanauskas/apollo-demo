@@ -1,0 +1,16 @@
+{
+  "presets": ["@babel/preset-react"],
+  "plugins": [
+    "babel-plugin-import-graphql",
+    ["babel-plugin-module-resolver", {
+      "root": ["./src/libraries"],
+      "alias": {
+        "^@api/([^/]+)$": "./src/graphql/\\1",
+        "^@api": "./src/graphql",
+        "^@lib/([^/]+)$": "./src/libraries/\\1",
+        "^@app/([^/]+)$": "./src/modules/\\1",
+        "^@app/([^/]+)/([^/]+)$": "./src/modules/\\1/\\2"
+      }
+    }]
+  ]
+}
